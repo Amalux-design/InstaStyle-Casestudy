@@ -665,14 +665,51 @@ The checkout is a multi-page flow that is technically modern but critically flaw
     <!-- Lo-Fi Sketches -->
     <div style="margin-bottom:70px;">
       <h3 style="margin-bottom:20px;">Lo-Fi Sketches</h3>
-      <div class="image-container" style="overflow:hidden; display:flex; justify-content:center; align-items:center; background:#f9f9f9;">
-        <img 
-          src="IMG_20251022_125233.webp" 
-          alt="High-fidelity mockups showing the redesigned interface"
-          style="width:100%; height:auto; display:block;  object-fit:contain;"
-        >
+
+      <!-- Carousel -->
+      <div class="carousel-wrapper" style="position:relative; overflow:hidden; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.08); background:#fff;">
+        <div class="carousel-inner" style="display:flex; transition:transform 0.6s ease;">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item" style="flex:0 0 100%;">
+            <img 
+              src="New folder (3)/product screen.webp" 
+              alt="Lo-Fi Sketch 1"
+              style="width:100%; height:auto; display:block; object-fit:contain;">
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" style="flex:0 0 100%;">
+            <img 
+              src="New folder (3)/cart.webp" 
+              alt="Lo-Fi Sketch 2"
+              style="width:100%; height:auto; display:block; object-fit:contain;">
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" style="flex:0 0 100%;">
+            <img 
+              src="New folder (3)/checkout.webp" 
+              alt="Lo-Fi Sketch 3"
+              style="width:100%; height:auto; display:block; object-fit:contain;">
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <button class="prev-btn" style="
+          position:absolute; top:50%; left:15px; transform:translateY(-50%);
+          background:rgba(0,0,0,0.4); color:#fff;
+          border:none; border-radius:50%; width:40px; height:40px;
+          cursor:pointer; font-size:20px;">&#10094;</button>
+
+        <button class="next-btn" style="
+          position:absolute; top:50%; right:15px; transform:translateY(-50%);
+          background:rgba(0,0,0,0.4); color:#fff;
+          border:none; border-radius:50%; width:40px; height:40px;
+          cursor:pointer; font-size:20px;">&#10095;</button>
       </div>
-      <p style="margin-bottom:30px;">I started with rapid sketching the login page, cart, and the product page.</p>
+
+      <p style="margin:30px 0;">I started with rapid sketching the login page, cart, and the product page.</p>
 
       <div class="solution-callout" style="background:#fff; padding:25px 30px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
         <h4 style="margin-bottom:15px;">Proposed Solution Changes</h4>
@@ -695,10 +732,8 @@ The checkout is a multi-page flow that is technically modern but critically flaw
         <img 
           src="https://res.cloudinary.com/dgxb8m8lr/image/upload/v1760806832/frame_fg1kz8.jpg" 
           alt="High-fidelity mockups showing the redesigned interface"
-          style="width:100%; height:auto; display:block;  object-fit:contain;"
-        >
+          style="width:100%; height:auto; display:block; object-fit:contain;">
       </div>
-      
     </div>
 
     <!-- Cart screen -->
@@ -709,10 +744,8 @@ The checkout is a multi-page flow that is technically modern but critically flaw
         <img 
           src="https://res.cloudinary.com/dgxb8m8lr/image/upload/v1760811899/Desktop_-_6_nfma80.jpg" 
           alt="High-fidelity mockups showing the redesigned interface"
-          style="width:100%; height:auto; display:block;  object-fit:contain;"
-        >
+          style="width:100%; height:auto; display:block; object-fit:contain;">
       </div>
-      
     </div>
     
     <!-- Payment screen -->
@@ -721,16 +754,31 @@ The checkout is a multi-page flow that is technically modern but critically flaw
       <p>A step by step progressive chekout page.</p>
       <div class="image-container" style="overflow:hidden; display:flex; justify-content:center; align-items:center; background:#f9f9f9;">
         <img 
-          src="New folder (3)/Payment Screen.avif" 
+          src="https://res.cloudinary.com/dgxb8m8lr/image/upload/v1760869244/Desktop_-_22_olwwus.png" 
           alt="High-fidelity mockups showing the redesigned interface"
-          style="width:100%; height:auto; display:block;  object-fit:contain;"
-        >
+          style="width:100%; height:auto; display:block; object-fit:contain;">
       </div>
-      
     </div>
 
   </div>
 </section>
+
+<!-- Carousel Script -->
+<script>
+  const carousel = document.querySelector('#solution .carousel-inner');
+  const slides = document.querySelectorAll('#solution .carousel-item');
+  let index = 0;
+
+  document.querySelector('#solution .next-btn').addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  document.querySelector('#solution .prev-btn').addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  });
+</script>
 
 
     <!-- Results Section -->
@@ -840,6 +888,7 @@ The checkout is a multi-page flow that is technically modern but critically flaw
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98fe929db1251191',t:'MTc2MDY5MTI4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
 
 
 
